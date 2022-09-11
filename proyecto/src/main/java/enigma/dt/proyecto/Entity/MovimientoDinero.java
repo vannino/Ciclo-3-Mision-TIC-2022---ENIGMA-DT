@@ -1,22 +1,38 @@
 package enigma.dt.proyecto.Entity;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "transacciones")
 public class MovimientoDinero {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_transaccion")
     private long id;
+
+    @Column(name = "monto")
     private Double montoTransaccion;
+
+    @Column(name = "concepto")
     private String concepto;
+
+    @ManyToOne
+    @JoinColumn(name = "empleado")
     private Empleado empleado;
-    private Empresa empresa;
+
+    @Column(name = "fecha_creacion")
     private Date fechaActualizacion;
+
+    @Column(name = "fecha_actualizacion")
     private Date fechaCreacion;
 
-    public MovimientoDinero(long id, Double montoTransaccion, String concepto, Empleado empleado, Empresa empresa, Date fechaActualizacion, Date fechaCreacion) {
+    public MovimientoDinero(long id, Double montoTransaccion, String concepto, Empleado empleado, Date fechaActualizacion, Date fechaCreacion) {
         this.id = id;
         this.montoTransaccion = montoTransaccion;
         this.concepto = concepto;
         this.empleado = empleado;
-        this.empresa = empresa;
         this.fechaActualizacion = fechaActualizacion;
         this.fechaCreacion = fechaCreacion;
     }
@@ -57,14 +73,6 @@ public class MovimientoDinero {
         this.id = id;
     }
 
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
-
     public Date getFechaActualizacion() {
         return fechaActualizacion;
     }
@@ -88,7 +96,6 @@ public class MovimientoDinero {
                 ", montoTransaccion=" + montoTransaccion +
                 ", concepto='" + concepto + '\'' +
                 ", empleado=" + empleado +
-                ", empresa=" + empresa +
                 ", fechaActualizacion=" + fechaActualizacion +
                 ", fechaCreacion=" + fechaCreacion +
                 '}';
