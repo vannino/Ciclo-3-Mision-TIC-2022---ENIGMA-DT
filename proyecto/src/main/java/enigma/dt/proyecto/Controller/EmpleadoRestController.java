@@ -3,36 +3,44 @@ package enigma.dt.proyecto.Controller;
 
 import enigma.dt.proyecto.Entity.Empleado;
 import enigma.dt.proyecto.Entity.Empresa;
+import enigma.dt.proyecto.Service.EmpleadoService;
+import enigma.dt.proyecto.Service.IEmpleadoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/users")
 
 public class EmpleadoRestController {
+    @Autowired
+    private EmpleadoService empleadoService;
+
     @GetMapping("/{id}")
     public Empleado findById(@PathVariable long id){
-        return null;
+        return empleadoService.findById(id);
     }
 
     @GetMapping("")
-    public ArrayList<Empleado> findAll(){
-        return null;
+    public List<Empleado> findAll(){
+        return empleadoService.findAll();
     }
 
     @PostMapping("")
     public Empleado createEmpleado(@RequestBody Empleado empleado){
-        return null;
+        return empleadoService.createEmpleado(empleado);
     }
 
-    @PatchMapping("/{id}")
+    @PutMapping("/{id}")
     public Empleado updateEmpleado(@PathVariable long id, @RequestBody Empleado empleado){
-        return null;
+        return empleadoService.updateEmpleado(id,empleado);
     }
 
     @DeleteMapping("/{id}")
     public void deleteEmpleado(@PathVariable long id){
+        empleadoService.deleteEmpleado(id);
     }
 
 }

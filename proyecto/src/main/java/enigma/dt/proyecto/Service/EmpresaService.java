@@ -3,10 +3,13 @@ package enigma.dt.proyecto.Service;
 import enigma.dt.proyecto.Entity.Empresa;
 import enigma.dt.proyecto.Repository.IEmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
+@Service
 public class EmpresaService implements IEmpresaService{
     @Autowired
     private IEmpresaRepository empresaRepository;
@@ -18,8 +21,8 @@ public class EmpresaService implements IEmpresaService{
     }
 
     @Override
-    public ArrayList<Empresa> findAll() {
-        ArrayList<Empresa> empresas = (ArrayList<Empresa>) empresaRepository.findAll();
+    public List<Empresa> findAll() {
+        List<Empresa> empresas = (List<Empresa>) empresaRepository.findAll();
         return empresas;
     }
 
@@ -31,8 +34,10 @@ public class EmpresaService implements IEmpresaService{
 
     @Override
     public Empresa updateEmpresa(long id, Empresa empresa) {
-        empresaRepository.save(empresa);
-        return empresa;
+        Empresa updatedEmpresa = empresa;
+        updatedEmpresa.setIdEmpresa(id);
+        empresaRepository.save(updatedEmpresa);
+        return updatedEmpresa;
     }
 
     @Override

@@ -57,14 +57,6 @@ public class MovimientoDinero {
         this.concepto = concepto;
     }
 
-    public Empleado getEmpleado() {
-        return empleado;
-    }
-
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
-    }
-
     public long getId() {
         return id;
     }
@@ -87,6 +79,14 @@ public class MovimientoDinero {
 
     public void setFechaCreacion(Date fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
     @Override

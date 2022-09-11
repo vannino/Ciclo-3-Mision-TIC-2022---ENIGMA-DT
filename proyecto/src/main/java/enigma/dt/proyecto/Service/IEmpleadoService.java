@@ -4,11 +4,12 @@ import enigma.dt.proyecto.Entity.Empleado;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface IEmpleadoService {
     public Empleado findById(long id);
 
-    public ArrayList<Empleado> findAll();
+    public List<Empleado> findAll();
 
     public Empleado createEmpleado(Empleado empleado);
 

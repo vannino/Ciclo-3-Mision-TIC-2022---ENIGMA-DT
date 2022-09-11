@@ -4,12 +4,15 @@ import enigma.dt.proyecto.Entity.MovimientoDinero;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface IMovimientoDineroService {
 
-    public MovimientoDinero findById(long id);
+    public MovimientoDinero findByID(long id);
 
-    public ArrayList<MovimientoDinero> findAll();
+    public List<MovimientoDinero> findALL();
+
+    public List<MovimientoDinero> findAll(long id);
 
     public MovimientoDinero createTransaccion(MovimientoDinero transaccion);
 

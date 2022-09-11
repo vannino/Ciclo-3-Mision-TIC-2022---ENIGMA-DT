@@ -25,10 +25,6 @@ public class Empresa {
     @Column(name = "direccion_empresa")
     private String direccionEmpresa;
 
-    @OneToMany
-    @JoinColumn(name = "empleados")
-    private List<Empleado> empleado;
-
     @Column(name = "fecha_creacion")
     private Date fechaCreacion;
 
@@ -41,7 +37,6 @@ public class Empresa {
         this.nitEmpresa = nitEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
         this.direccionEmpresa = direccionEmpresa;
-        this.empleado = empleado;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
     }
@@ -67,10 +62,6 @@ public class Empresa {
 
     public String getDireccionEmpresa() {
         return direccionEmpresa;
-    }
-
-    public List<Empleado> getEmpleado() {
-        return empleado;
     }
 
     public Date getFechaCreacion() {
@@ -101,10 +92,6 @@ public class Empresa {
         this.direccionEmpresa = direccionEmpresa;
     }
 
-    public void setEmpleado(List<Empleado> empleado) {
-        this.empleado = empleado;
-    }
-
     public void setFechaCreacion(Date fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
@@ -121,7 +108,6 @@ public class Empresa {
                 ", nitEmpresa='" + nitEmpresa + '\'' +
                 ", telefonoEmpresa='" + telefonoEmpresa + '\'' +
                 ", direccionEmpresa='" + direccionEmpresa + '\'' +
-                ", empleado=" + empleado +
                 ", fechaCreacion=" + fechaCreacion +
                 ", fechaActualizacion=" + fechaActualizacion +
                 '}';

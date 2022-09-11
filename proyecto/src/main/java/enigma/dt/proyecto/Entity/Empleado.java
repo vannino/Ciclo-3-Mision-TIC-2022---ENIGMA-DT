@@ -26,10 +26,6 @@ public class Empleado {
     @JoinColumn(name = "rol_empleado")
     private Rol rol;
 
-    @OneToMany
-    @JoinColumn(name = "transacciones")
-    private List<MovimientoDinero> transacciones;
-
     @Column(name = "fecha_actualizacion")
     private Date fechaActualizacion;
 
@@ -43,7 +39,6 @@ public class Empleado {
         this.nombreEmpleado = nombreEmpleado;
         this.empresa = empresa;
         this.rol = rol;
-        this.transacciones = transacciones;
         this.fechaActualizacion = fechaActualizacion;
         this.fechaCreacion = fechaCreacion;
     }
@@ -69,10 +64,6 @@ public class Empleado {
 
     public Rol getRol() {
         return rol;
-    }
-
-    public List<MovimientoDinero> getTransacciones() {
-        return transacciones;
     }
 
     public Date getFechaActualizacion() {
@@ -103,10 +94,6 @@ public class Empleado {
         this.rol = rol;
     }
 
-    public void setTransacciones(List<MovimientoDinero> transacciones) {
-        this.transacciones = transacciones;
-    }
-
     public void setFechaActualizacion(Date fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
@@ -123,7 +110,6 @@ public class Empleado {
                 ", nombreEmpleado='" + nombreEmpleado + '\'' +
                 ", empresa=" + empresa +
                 ", rol=" + rol +
-                ", transacciones=" + transacciones +
                 ", fechaActualizacion=" + fechaActualizacion +
                 ", fechaCreacion=" + fechaCreacion +
                 '}';
