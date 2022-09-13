@@ -1,7 +1,9 @@
 package enigma.dt.proyecto.Service;
 
 import enigma.dt.proyecto.Entity.Empleado;
+import enigma.dt.proyecto.Entity.MovimientoDinero;
 import enigma.dt.proyecto.Repository.IEmpleadoRepository;
+import enigma.dt.proyecto.Repository.IMovimientoDineroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,9 @@ import java.util.Optional;
 
 @Service
 public class EmpleadoService implements IEmpleadoService {
+    @Autowired
+    private IMovimientoDineroRepository movimientoDineroRepository;
+
     @Autowired
     private IEmpleadoRepository empleadoRepository;
 
@@ -43,6 +48,13 @@ public class EmpleadoService implements IEmpleadoService {
 
     @Override
     public void deleteEmpleado(long id) {
+        List<MovimientoDinero> transacciones = (List<MovimientoDinero>) movimientoDineroRepository.findAll();
+        for (MovimientoDinero transaccion: transacciones){
+            if (transaccion.getEmpleado().getId() == id){
+                long id_transaccion = transaccion.getId();
+                movimientoDineroRepository.deleteById(id_transaccion);
+            }
+        }
         empleadoRepository.deleteById(id);
     }
 }

@@ -1,7 +1,11 @@
 package enigma.dt.proyecto.Service;
 
+import enigma.dt.proyecto.Entity.Empleado;
 import enigma.dt.proyecto.Entity.Empresa;
+import enigma.dt.proyecto.Entity.MovimientoDinero;
+import enigma.dt.proyecto.Repository.IEmpleadoRepository;
 import enigma.dt.proyecto.Repository.IEmpresaRepository;
+import enigma.dt.proyecto.Repository.IMovimientoDineroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +15,10 @@ import java.util.Optional;
 
 @Service
 public class EmpresaService implements IEmpresaService{
+    @Autowired
+    private IEmpleadoRepository empleadoRepository;
+    @Autowired
+    private IMovimientoDineroRepository movimientoDineroRepository;
     @Autowired
     private IEmpresaRepository empresaRepository;
 
@@ -42,6 +50,20 @@ public class EmpresaService implements IEmpresaService{
 
     @Override
     public void deleteEmpresa(long id) {
+        List<MovimientoDinero> transacciones = (List<MovimientoDinero>) movimientoDineroRepository.findAll();
+        for (MovimientoDinero transaccion: transacciones){
+            if (transaccion.getEmpleado().getEmpresa().getIdEmpresa() == id){
+                long id_transaccion = transaccion.getId();
+                movimientoDineroRepository.deleteById(id_transaccion);
+            }
+        }
+        List<Empleado> empleados = (List<Empleado>) empleadoRepository.findAll();
+        for (Empleado empleado: empleados){
+            if (empleado.getEmpresa().getIdEmpresa() == id){
+                long id_empleado = empleado.getId();
+                empleadoRepository.deleteById(id_empleado);
+            }
+        }
         empresaRepository.deleteById(id);
     }
 }

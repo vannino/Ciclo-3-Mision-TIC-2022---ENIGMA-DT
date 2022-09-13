@@ -35,12 +35,12 @@ public class MovimientoDineroRestController {
         return movimientoDineroService.createTransaccion(transaccion);
     }
 
-    @PutMapping("/{id}/movements")
+    @PutMapping("/movements/{id}")
     public MovimientoDinero updateTransaccion(@PathVariable long id, @RequestBody MovimientoDinero transaccion){
         return movimientoDineroService.updateTransaccion(id,transaccion);
     }
 
-    @DeleteMapping("/{id}/movements")
+    @DeleteMapping("/movements/{id}")
     public void deleteTransaccion(@PathVariable long id){
         movimientoDineroService.deleteTransaccion(id);
     }
