@@ -23,7 +23,7 @@ public class EmpleadoRestController {
         return empleadoService.findById(id);
     }
 
-    @GetMapping("")
+    @GetMapping("/all/")
     public List<Empleado> findAll(){
         return empleadoService.findAll();
     }

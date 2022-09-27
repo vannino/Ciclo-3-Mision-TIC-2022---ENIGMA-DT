@@ -23,7 +23,7 @@ public class EmpleadoService implements IEmpleadoService {
 
     @Override
     public List<Empleado> findAll() {
-        List<Empleado> empleados = (List<Empleado>) empleadoRepository.findAll();
+        List<Empleado> empleados  = (List<Empleado>) empleadoRepository.findAll();
         return empleados;
     }
 

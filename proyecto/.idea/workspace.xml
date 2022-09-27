@@ -7,31 +7,18 @@
     <list default="true" id="017da868-7dce-4c97-bc7f-9b16213cea99" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Controller/EmpleadoRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Controller/EmpleadoRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Controller/EmpresaRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Controller/EmpresaRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Controller/MovimientoDineroRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Controller/MovimientoDineroRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Entity/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Entity/Empleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Entity/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Entity/Empresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Entity/MovimientoDinero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Entity/MovimientoDinero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Service/EmpleadoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Service/EmpleadoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Service/EmpresaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Service/EmpresaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Service/IEmpleadoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Service/IEmpleadoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Service/IEmpresaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Service/IEmpresaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Service/IMovimientoDineroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Service/IMovimientoDineroService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Service/MovimientoDineroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enigma/dt/proyecto/Service/MovimientoDineroService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Controller/EmpleadoRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Controller/EmpleadoRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Controller/EmpresaRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Controller/EmpresaRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Controller/MovimientoDineroRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Controller/MovimientoDineroRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Entity/Empleado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Entity/Empleado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Entity/Empresa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Entity/Empresa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Entity/MovimientoDinero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Entity/MovimientoDinero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Service/EmpleadoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Service/EmpleadoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Service/EmpresaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Service/EmpresaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Service/IEmpleadoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Service/IEmpleadoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Service/IEmpresaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Service/IEmpresaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Service/IMovimientoDineroService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Service/IMovimientoDineroService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Service/MovimientoDineroService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/enigma/dt/proyecto/Service/MovimientoDineroService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-enigma.dt.proyecto.ProyectoApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-enigma.dt.proyecto.ProyectoApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/enigma.dt.proyecto.ProyectoApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/enigma.dt.proyecto.ProyectoApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,13 +73,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lucy Montes/Desktop/MinTic/Ciclo 3/demo/pom.xml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/luisa/OneDrive/Desktop/Ingreso_Egreso/ingresosegresos/ingresosegresos/pom.xml"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Run" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="enigma.dt.proyecto.ProyectoApplication" />
