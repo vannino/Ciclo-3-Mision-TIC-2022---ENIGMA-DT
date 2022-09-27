@@ -18,6 +18,7 @@ public class MovimientoDinero {
     @Column(name = "monto")
     private Double montoTransaccion;
 
+    @NotEmpty
     @Column(name = "concepto")
     private String concepto;
 

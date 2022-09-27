@@ -36,22 +36,41 @@ public class TransaccionesController {
         LOG.log(Level.INFO,"getListTransacciones");
         List<MovimientoDinero> transacciones = movimientoDineroService.findALL();
         model.addAttribute("transacciones",transacciones);
+        List<Empresa> empresas = empresaService.findAll();
+        model.addAttribute("empresas",empresas);
         return "transacciones/list";
     }
+
+    @GetMapping("/transaccionesEmpresa/list")
+    public String getListTransaccionesXEmpresa(@Valid long empresa,Model model){
+        LOG.log(Level.INFO,"getListTransaccionesXEmpresa");
+        List<MovimientoDinero> transaccionesXEmpresa = movimientoDineroService.findAll(empresa);
+        double sum = 0;
+        for (MovimientoDinero transaccion:transaccionesXEmpresa) {
+            sum += transaccion.getMontoTransaccion();
+        }
+        Empresa empresaObj = empresaService.findById(empresa);
+        model.addAttribute("transaccionesXEmpresa",transaccionesXEmpresa);
+        model.addAttribute("empresaObj",empresaObj);
+        model.addAttribute("total",sum);
+        return "transacciones/listXEmpresa";
+
+    }
+
     @GetMapping("/transacciones/modificar")
     public String modificarTransaccion(Model model){
         LOG.log(Level.INFO,"modificarTransaccion");
-        MovimientoDinero transaccion = new MovimientoDinero();
-        model.addAttribute("transaccion",transaccion);
+        MovimientoDinero movimientoDinero = new MovimientoDinero();
+        model.addAttribute("movimientoDinero",movimientoDinero);
         List<Empleado> empleados = empleadoService.findAll();
         model.addAttribute("empleados",empleados);
         return "transacciones/modificar";
     }
     @PostMapping("/guardarTransaccion")
-    public String guardarTransaccion(@Valid MovimientoDinero transaccion, BindingResult errors, Model model) {
+    public String guardarTransaccion(@Valid MovimientoDinero movimientoDinero, BindingResult errors, Model model) {
         LOG.log(Level.INFO, "guardarTransaccion");
-        if (transaccion.getEmpleado().getId() == 0) {
-            FieldError field = new FieldError("transaccion", "empleado", "Campo obligatorio");
+        if (movimientoDinero.getEmpleado().getId() == 0) {
+            FieldError field = new FieldError("movimientoDinero", "empleado", "Campo obligatorio");
             errors.addError(field);
         }
         for (ObjectError e : errors.getAllErrors())
@@ -61,9 +80,9 @@ public class TransaccionesController {
             model.addAttribute("empleados",empleados);
             return "transacciones/modificar";
         } else {
-            transaccion.setEstado(true);
-            System.out.println(transaccion.toString());
-            movimientoDineroService.createTransaccion(transaccion);
+            movimientoDinero.setEstado(true);
+            System.out.println(movimientoDinero.toString());
+            movimientoDineroService.createTransaccion(movimientoDinero);
             return "redirect:/transacciones/list";
         }
     }
@@ -72,8 +91,8 @@ public class TransaccionesController {
     public String editarTransaccion(@PathVariable("id") long id, Model model){
         LOG.log(Level.INFO,"editarTransaccion");
         System.out.println(id);
-        MovimientoDinero transaccion = movimientoDineroService.findById(id);
-        model.addAttribute("transaccion", transaccion);
+        MovimientoDinero movimientoDinero = movimientoDineroService.findById(id);
+        model.addAttribute("movimientoDinero", movimientoDinero);
         List<Empleado> empleados = empleadoService.findAll();
         model.addAttribute("empleados",empleados);
         return "transacciones/modificar";
@@ -82,9 +101,9 @@ public class TransaccionesController {
     @RequestMapping(value="/eliminarTransaccion/{id}", method = RequestMethod.GET)
     public String eliminarTransaccion(@PathVariable("id") long id,Model modelo){
         LOG.log(Level.INFO,"eliminarTransaccion");
-        MovimientoDinero transaccion = movimientoDineroService.findById(id);
-        transaccion.setEstado(false);
-        movimientoDineroService.updateTransaccion(id,transaccion);
+        MovimientoDinero movimientoDinero = movimientoDineroService.findById(id);
+        movimientoDinero.setEstado(false);
+        movimientoDineroService.updateTransaccion(id,movimientoDinero);
         return "redirect:/transacciones/list";
     }
 }

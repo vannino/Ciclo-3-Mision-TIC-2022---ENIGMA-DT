@@ -11,7 +11,7 @@
 <body>
 <header th:replace="layout/plantilla :: header"></header>
 <section th:replace="layout/plantilla :: mainTransacciones"></section>
-
+<br>
 <section>
     <div class="container">
         <div class="card">
@@ -30,15 +30,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="transaccion, contador: ${transacciones}" th:if="${transaccion.estado}">
+                        <tr th:each="movimientoDinero, contador: ${transacciones}" th:if="${movimientoDinero.estado}">
                             <td th:text="${contador.count}"></td>
-                            <td th:text="${transaccion.montoTransaccion}"></td>
-                            <td th:text="${transaccion.concepto}"></td>
-                            <td th:text="${transaccion.empleado.nombreEmpleado}"></td>
-                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/editarTransaccion/}+${transaccion.id}" class="btn btn-secondary" >
+                            <td th:text="${movimientoDinero.montoTransaccion}"></td>
+                            <td th:text="${movimientoDinero.concepto}"></td>
+                            <td th:text="${movimientoDinero.empleado.nombreEmpleado}"></td>
+                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/editarTransaccion/}+${movimientoDinero.id}" class="btn btn-secondary" >
                                 <i class="fa fa-edit"></i>
                             </a></td>
-                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/eliminarTransaccion/}+${transaccion.id}" class="btn btn-secondary" >
+                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/eliminarTransaccion/}+${movimientoDinero.id}" class="btn btn-secondary" >
                                 <i class="fa fa-remove"></i>
                             </a></td>
                         </tr>
@@ -61,6 +61,28 @@
                 </a>
             </div>
         </div>
+    </div>
+</section>
+<br>
+<section>
+    <div class="container">
+                    <form th:action="@{/transaccionesEmpresa/list}">
+                        <input type="hidden" name="id"/>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="empresa">Empresa</label>
+                            <div class="col-sm-10">
+                                <select  id="empresa" style="width:100%!important; height: 100%!important;" name="empresa" required>
+                                    <option value="" selected>Empresa</option>
+                                    <option th:each="empresa: ${empresas}"
+                                            th:value="${empresa.idEmpresa}"
+                                            th:text="${empresa.nombreEmpresa}"
+                                    ></option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <button class="btn btn-dark" type="submit">Consultar</button>
+                    </form>
     </div>
 </section>
 <!--

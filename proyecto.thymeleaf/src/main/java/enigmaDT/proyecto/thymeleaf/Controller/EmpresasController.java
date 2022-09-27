@@ -47,11 +47,17 @@ public class EmpresasController {
 
     @PostMapping("/guardarEmpresa")
     public String guardarEmpresa(@Valid Empresa empresa, BindingResult errors, Model model) {
-        LOG.log(Level.INFO, "guardarEmpresa");
-        empresa.setEstado(true);
-        System.out.println(empresa.toString());
-        empresaService.createEmpresa(empresa);
-        return "redirect:/empresas/list";
+        for (ObjectError e : errors.getAllErrors())
+            System.out.println(e.toString());
+        if (errors.hasErrors()) {
+            return "empresas/modificar";
+        }else {
+            LOG.log(Level.INFO, "guardarEmpresa");
+            empresa.setEstado(true);
+            System.out.println(empresa.toString());
+            empresaService.createEmpresa(empresa);
+            return "redirect:/empresas/list";
+        }
     }
 
     @RequestMapping(value = "/editarEmpresa/{id}", method = RequestMethod.GET)
