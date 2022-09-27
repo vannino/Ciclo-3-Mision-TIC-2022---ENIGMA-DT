@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" >
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/css/css-footer.css}">
+</head>
+<body>
+    <header th:replace="layout/plantilla :: header"></header>
+    <section th:replace="layout/plantilla :: mainIndex"></section>
+    <div class="container m-3">
+        <h2 th:text="${mensaje}">lista</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card text-white bg-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">Empleados</h5>
+                        <p class="card-text">Sistema de gestión de empleados</p>
+                        <a th:href="@{/empleados/list}" class="btn btn-light">Ingresar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card text-white bg-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">Empresas</h5>
+                        <p class="card-text">Sistema de gestión de empresas</p>
+                        <a th:href="@{/empresas/list}" class="btn btn-light">Ingresar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card text-white bg-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">Movimientos</h5>
+                        <p class="card-text">Sistema de gestión de movimientos</p>
+                        <a th:href="@{/transacciones/list}" class="btn btn-light">Ingresar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="layout/plantilla :: footer"></footer>
+    <script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>
+</body>
+</html>
